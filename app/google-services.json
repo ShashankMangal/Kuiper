@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "582710100579",
+    "project_id": "kuiper-95383",
+    "storage_bucket": "kuiper-95383.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582710100579:android:67a1eabb857413da71ae56",
+        "android_client_info": {
+          "package_name": "com.sharkbyteslab.kuiper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582710100579-32jr9h17cfsc5d4jf9jbpudfs4h4at3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmHWL3OICxSqodnnXFYvoHZ0j-6i97Dv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582710100579-32jr9h17cfsc5d4jf9jbpudfs4h4at3l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

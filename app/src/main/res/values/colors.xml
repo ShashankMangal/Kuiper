@@ -8,9 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#dc2e2e</color>
-    <color name="colorPrimaryDark">#AC1212</color>
-    <color name="ascent">#FA6767</color>
+<!--    <color name="colorPrimary">#dc2e2e</color>-->
+<!--    <color name="colorPrimaryDark">#AC1212</color>-->
+<!--    <color name="ascent">#FA6767</color>-->
+
+    <color name="colorPrimary">#00c7d1</color>
+    <color name="colorPrimaryDark">#00c7d1</color>
+    <color name="ascent">#00FFC2</color>
+    <color name="lightTheme">#B3E4E6</color>
 
 
 </resources>
