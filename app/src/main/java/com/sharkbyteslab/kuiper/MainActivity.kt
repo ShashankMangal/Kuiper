@@ -3,6 +3,7 @@ package com.sharkbyteslab.kuiper
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.sharkbyteslab.kuiper.Activities.NumberActivity
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         if(auth.currentUser==null)
         {
+            Log.d("User Main","Null");
+
             startActivity(Intent(this@MainActivity, NumberActivity::class.java))
             finish()
         }

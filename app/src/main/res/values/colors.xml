@@ -16,6 +16,7 @@
     <color name="colorPrimaryDark">#00c7d1</color>
     <color name="ascent">#00FFC2</color>
     <color name="lightTheme">#B3E4E6</color>
+    <color name="lightgrey">#B2B2B2</color>
 
 
 </resources>

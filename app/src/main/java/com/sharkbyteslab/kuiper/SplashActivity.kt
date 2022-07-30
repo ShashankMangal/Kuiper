@@ -3,6 +3,7 @@ package com.sharkbyteslab.kuiper
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.sharkbyteslab.kuiper.Activities.NumberActivity
@@ -30,6 +31,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             if (user == null) {
+                Log.d("User", "Not Registered");
                 startActivity(Intent(this@SplashActivity, NumberActivity::class.java))
                 finish()
             } else {

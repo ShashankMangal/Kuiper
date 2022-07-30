@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:padding="24dp"
     android:layout_height="match_parent"
-    android:background="@drawable/background_login_theme"
+    android:background="@color/lightTheme"
     tools:context=".Activities.NumberActivity">
 
     <ImageView
