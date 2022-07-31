@@ -32,11 +32,6 @@ class ProfileActivity : AppCompatActivity() {
 
         val builder = AlertDialog.Builder(this)
 
-        builder.setMessage("Almost Done")
-        builder.setTitle("Updating Profile")
-        builder.setCancelable(false)
-
-        dialog = builder.create()
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
@@ -55,22 +50,26 @@ class ProfileActivity : AppCompatActivity() {
             binding.continueBtn.setOnClickListener{
 
                 Toast.makeText(this, "Clicked.",Toast.LENGTH_SHORT).show()
-                dialog.show()
+                Log.e("clicked", "Continue");
 
                 if(binding.profileUsername.text!!.isEmpty())
                 {
-                    dialog.dismiss()
                     Toast.makeText(this, "Enter Username",Toast.LENGTH_SHORT).show()
                 }
                 else if(selectedImg==null)
                 {
-                    dialog.dismiss()
                     Toast.makeText(this, "Please upload profile Image.",Toast.LENGTH_SHORT).show()
                 }
                 else
                 {
+                    builder.setMessage("Almost Done")
+                    builder.setTitle("Updating Profile")
+                    builder.setCancelable(false)
+
+                    dialog = builder.create()
+                    dialog.show()
                     uploadData();
-                    dialog.dismiss()
+
                 }
 
             }
@@ -92,6 +91,7 @@ class ProfileActivity : AppCompatActivity() {
             }
             else
             {
+                dialog.dismiss()
                 Toast.makeText(this, "Error : "+it.exception.toString(), Toast.LENGTH_SHORT).show()
             }
         }
@@ -106,6 +106,7 @@ class ProfileActivity : AppCompatActivity() {
             .setValue(user)
             .addOnSuccessListener {
                 Toast.makeText(this, "Profile Updated Successfully.", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }
