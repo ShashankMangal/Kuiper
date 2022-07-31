@@ -56,7 +56,7 @@ class ProfileActivity : AppCompatActivity() {
                 {
                     Toast.makeText(this, "Enter Username",Toast.LENGTH_SHORT).show()
                 }
-                else if(selectedImg==null)
+                else if(selectedImg.equals(Uri.EMPTY))
                 {
                     Toast.makeText(this, "Please upload profile Image.",Toast.LENGTH_SHORT).show()
                 }
