@@ -1,11 +1,13 @@
 package com.sharkbyteslab.kuiper.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.sharkbyteslab.kuiper.Activities.ChatActivity
 import com.sharkbyteslab.kuiper.Models.UserModel
 import com.sharkbyteslab.kuiper.R
 import com.sharkbyteslab.kuiper.databinding.ChatUserItemLayoutBinding
@@ -28,6 +30,12 @@ class ChatAdapter(var context : Context, var list :  ArrayList<UserModel>) : Rec
         var user = list[position]
         Glide.with(context).load(user.imageUrl).into(holder.binding.chatUserImage)
         holder.binding.chatUserName.text = user.name
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra("uid", user.uid)
+            context.startActivity(intent)
+        }
 
     }
 

@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sharkbyteslab.kuiper">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -17,34 +17,34 @@
         android:theme="@style/Theme.Kuiper"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Kuiper.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Activities.ProfileActivity"
-            android:theme="@style/Theme.Kuiper.NoActionBar"
-            android:exported="false" />
-
+            android:exported="false"
+            android:theme="@style/Theme.Kuiper.NoActionBar" />
         <activity
             android:name=".Activities.OTPActivity"
-            android:theme="@style/Theme.Kuiper.NoActionBar"
-            android:exported="false" />
-
+            android:exported="false"
+            android:theme="@style/Theme.Kuiper.NoActionBar" />
         <activity
             android:name=".Activities.NumberActivity"
-            android:theme="@style/Theme.Kuiper.NoActionBar"
-            android:exported="false"/>
-
+            android:exported="false"
+            android:theme="@style/Theme.Kuiper.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.Kuiper.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Kuiper.NoActionBar" />
     </application>
 
 </manifest>
