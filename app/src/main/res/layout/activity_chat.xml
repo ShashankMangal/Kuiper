@@ -4,8 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/emoji_back"
     tools:context=".Activities.ChatActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/sent_item_layout"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:id="@+id/chatRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/chatMaterialCardView"
+        />
 
     <ImageView
         android:id="@+id/chat_sendbtn"
@@ -30,6 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="8dp"
         android:layout_marginHorizontal="8dp"
+        android:id="@+id/chatMaterialCardView"
         >
         <EditText
             android:id="@+id/chat_message_box"
