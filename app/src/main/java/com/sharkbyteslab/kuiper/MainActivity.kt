@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.google.firebase.auth.FirebaseAuth
 import com.sharkbyteslab.kuiper.Activities.NumberActivity
-import com.sharkbyteslab.kuiper.Adapters.ViewPagerAdapter
-import com.sharkbyteslab.kuiper.Fragments.Call
-import com.sharkbyteslab.kuiper.Fragments.Chat
-import com.sharkbyteslab.kuiper.Fragments.Status
+import com.sharkbyteslab.kuiper.Fragments.*
 import com.sharkbyteslab.kuiper.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,11 +21,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
-        val fragmentArrayList = ArrayList<Fragment>()
-
-        fragmentArrayList.add(Chat())
-        fragmentArrayList.add(Status())
-        fragmentArrayList.add(Call())
 
         auth = FirebaseAuth.getInstance()
 
@@ -39,11 +32,26 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        val adapter = ViewPagerAdapter(this, supportFragmentManager, fragmentArrayList)
+        binding!!.signOut.setOnClickListener{
+            auth.signOut()
+            startActivity(Intent(this@MainActivity, NumberActivity::class.java))
+            finish()
+        }
 
-        binding!!.viewPager.adapter = adapter
-        binding!!.tabs.setupWithViewPager(binding!!.viewPager)
-
+        fragmentstart()
 
     }
+
+    private fun fragmentstart()
+    {
+        var fragment : Fragment? = null;
+        fragment = Chat();
+        val args = Bundle();
+
+        val fragmentTransaction : FragmentTransaction = supportFragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_framelayout, fragment);
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+    }
+
 }

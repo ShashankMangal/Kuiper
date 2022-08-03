@@ -49,7 +49,7 @@ class ProfileActivity : AppCompatActivity() {
 
             binding.continueBtn.setOnClickListener{
 
-                Toast.makeText(this, "Clicked.",Toast.LENGTH_SHORT).show()
+
                 Log.e("clicked", "Continue");
 
                 if(binding.profileUsername.text!!.isEmpty())

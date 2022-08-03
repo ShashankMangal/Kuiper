@@ -90,5 +90,9 @@ class ChatActivity : AppCompatActivity() {
 
             })
 
+        binding.chatBack.setOnClickListener{
+            onBackPressed()
+        }
+
     }
 }
